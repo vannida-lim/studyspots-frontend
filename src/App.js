@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Nav from './components/Nav';
+import Routes from './Routes';
+import MainContainer from './containers/MainContainer'
+import { connect } from 'react-redux'
+import actions from './redux/actions'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Footer = styled.section`font-family: 'Quicksand', sans-serif; font-size: 1em;  color: white; text-align: center; ;`
+
+const mapDispatchToProps = {fetchCafes: actions.fetchCafes }
+class App extends Component {
+
+  componentDidMount() {
+    return this.props.fetchCafes()
+  }
+
+  render() {
+    return (
+    <div>
+      <Nav />
+      <Routes />
+      <MainContainer />
+      <Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a>
+      </Footer>
     </div>
   );
+  }
+
+ 
 }
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
