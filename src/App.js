@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Grid, Cell } from 'styled-css-grid';
 import Nav from './components/Nav';
 import Routes from './Routes';
-import MainContainer from './containers/MainContainer'
+import CafeList from './components/CafeList'
+import Cafe from './components/Cafe'
+import MapContainer from './containers/MapContainer'
 import { connect } from 'react-redux'
 import actions from './redux/actions'
 
@@ -20,7 +23,12 @@ class App extends Component {
     <div>
       <Nav />
       <Routes />
-      <MainContainer />
+      {/* <MainContainer /> */}
+      <Grid columns={3} >
+        <CafeList/>
+        <Cafe/>
+        <MapContainer/>
+      </Grid>
       <Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a>
       </Footer>
     </div>

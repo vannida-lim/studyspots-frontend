@@ -6,4 +6,7 @@ body {
   background: #7067CF;
 }
 
-
+/* .list {
+  flex: 1;
+  overflow-y: scroll;
+} */

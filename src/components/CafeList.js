@@ -11,7 +11,7 @@ class CafeList extends Component {
         if (this.props.cafes) {
             return this.props.cafes.map(cafe => {
                 return (<div key={cafe.id}>
-                    <p>{cafe.name} | {cafe.address} 
+                    <p>{cafe.name} 
                     <button onClick={() => this.props.selectCafe(cafe)} >View More</button></p>
                 </div>)
         })}
@@ -21,7 +21,7 @@ class CafeList extends Component {
     return (
         <div>
             <h1>Manhattan Cafes</h1>
-            <div>{this.renderList()}</div>
+            <div className="list">{this.renderList()}</div>
         </div>
     )}
 }
