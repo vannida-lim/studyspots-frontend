@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CafeList from '../components/CafeList'
+import Cafe from '../components/Cafe'
 
 
 class MainContainer extends Component {
@@ -7,6 +8,7 @@ class MainContainer extends Component {
         return(
             <div>
                 <CafeList/>
+                <Cafe/>
             </div>
         )
     }

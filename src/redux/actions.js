@@ -90,7 +90,7 @@ const fetchCafes = () => dispatch => {
 
 
 const selectCafe = cafe => ({
-    type: 'CAFE_SELECTED',
+    type: 'SELECT_CAFE',
     payload: cafe
 })
 

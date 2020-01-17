@@ -1,21 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Cafe from '../components/Cafe'
-// import { fetchCafes } from '../redux/actions'
+import action from '../redux/actions'
+import { selectCafe } from '../redux/actions'
 
-const CafeList = (props) => {
-    console.log(props)
+// const selectCafe = {selectCafe: action.selectCafe }
+class CafeList extends Component {
+
+    renderList() {
+        return this.props.cafes.map(cafe => {
+            return (<div key={cafe.id}>
+                <p>{cafe.name} | {cafe.address} 
+                <button >View More</button></p>
+            </div>)
+        })
+    }
+
+    render() {
+    console.log(this.props)
     return (
         <div>
-            {props.cafes.map(cafe => <Cafe key={cafe.id} cafe={cafe}/>)}
+            <h1>Manhattan Cafes</h1>
+            {/* {props.cafes.map(cafe => <Cafe key={cafe.id} cafe={cafe}/>)} */}
+            {this.renderList()}
         </div>
-    )
+    )}
 }
 
 const mapStateToProps = (state) => {
     return {
       cafes: state.allInfoAboutCafes.cafes
+    //   cafe: state.allInfoAboutCafes.cafe
     }
   }
 
-export default connect(mapStateToProps)(CafeList)
+export default connect(mapStateToProps)(CafeList);

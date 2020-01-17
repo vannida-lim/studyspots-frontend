@@ -1,14 +1,11 @@
 import React from 'react'
 
-const Cafe = ({cafe}) => {
+const Cafe = () => {
     return (
         <div>
-            <p>Name: {cafe.name}</p>
-            <p>Address: {cafe.address}</p>
-            <p>Rating: {cafe.rating}</p>
-            <p>Price: {cafe.price}</p>
+            hi
         </div>
     )
 }
 
-export default Cafe;
+export default Cafe

@@ -1,14 +1,12 @@
 const initialState = {
-  cafes: []
+  cafes: [],
+  cafe: {}
 }
 
 const cafeReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case 'SET_USER':
-      return payload;
-
-    case 'CLEAR_USER':
-      return {};
+    case 'SELECT_CAFE':
+      return {cafe: payload};
 
     case "FETCH_CAFES":
       return {
