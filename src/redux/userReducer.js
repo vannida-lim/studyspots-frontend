@@ -1,5 +1,6 @@
 const initialState = {
-    users: []
+    users: [],
+    user: {}
 }
 const userReducer = (state = initialState, { type, payload }) => {
     switch (type) {
@@ -7,6 +8,8 @@ const userReducer = (state = initialState, { type, payload }) => {
         return payload;
       case 'CLEAR_USER':
         return {};
+      case 'ADD_TO_FAVORITES':
+        return {...state.user, payload};
       default:
         return state;
     }

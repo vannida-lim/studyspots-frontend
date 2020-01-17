@@ -6,7 +6,7 @@ const initialState = {
 const cafeReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SELECT_CAFE':
-      return {cafe: payload};
+      return payload;
 
     case "FETCH_CAFES":
       return {

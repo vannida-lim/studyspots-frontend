@@ -74,10 +74,15 @@ const logoutUser = () => dispatch => {
     localStorage.clear();
 };
 
+const addToFavorites = cafe => ({
+    type: "ADD_TO_FAVORITES",
+    payload: cafe
+})
+
 const setCafes = cafes => ({
     type: "SET_CAFES",
     payload: cafes
-})
+});
 
 const fetchCafes = () => dispatch => {
     fetch("http://localhost:3000/locations")
@@ -85,14 +90,13 @@ const fetchCafes = () => dispatch => {
     .then(cafes => {
        dispatch( {type: "FETCH_CAFES", payload: cafes} )
     })
-}
-
+};
 
 
 const selectCafe = cafe => ({
     type: 'SELECT_CAFE',
     payload: cafe
-})
+});
 
 export default {
     newUserToDB,
@@ -102,5 +106,6 @@ export default {
     logoutUser,
     fetchCafes,
     setCafes,
-    selectCafe
+    selectCafe,
+    addToFavorites
 }
