@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 
 const Auth = (props) => {
+  
   const [login, setLogin] = useState(true);
   const [userData, setUserData] = useState({
     username: '',
     password: ''
   });
-
+  
   const handleChange = e => {
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value
-    });
+    setUserData({...userData,[e.target.name]: e.target.value});
   };
-
+  
   const handleSubmit = e => {
     e.preventDefault();
     setUserData({
@@ -22,7 +20,7 @@ const Auth = (props) => {
     })
     props.history.push("/")
   };
-
+  
   const { username, password } = userData;
 
   return (

@@ -1,15 +1,12 @@
 const initialState = {
-    users: [],
-    user: {}
+    currentUser: {}
 }
 const userReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-      case 'SET_USER':
-        return payload;
-      case 'CLEAR_USER':
+      case 'LOGIN_USER':
+        return {...state, currentUser: payload};
+      case 'LOGOUT_USER':
         return {};
-      case 'ADD_TO_FAVORITES':
-        return {...state.user, payload};
       default:
         return state;
     }

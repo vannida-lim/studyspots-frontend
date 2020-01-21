@@ -35,7 +35,7 @@ const Nav = () => {
     <NavHeader>
       <Title><span role="img" aria-label="push pin">📍</span>StudySpots</Title>
       <NavLinks>
-        <Link to="/">Home </Link>
+        <Link to="/">Home </Link><br/>
         <Link to="/auth"> Login/Signup </Link>
         <Link to="/profile"> Profile </Link>
         <Link to="/" onClick={handleLogout}>

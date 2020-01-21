@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components' 
 import actions from '../redux/actions'
+import Reviews from './Reviews'
+import ReviewForm from './ReviewForm'
 
 const Wrapper = styled.div`
     width: 32%;
@@ -20,7 +22,6 @@ const Image = styled.img`
     margin-right: 10px
 `;
 
-const mapDispatchToProps = { addToFavorites: actions.addToFavorites }
 
 const Cafe = (props) => {
     console.log(props)
@@ -34,6 +35,8 @@ const Cafe = (props) => {
             <p>Price: {props.cafe.price === null? "$" : props.cafe.price}</p>
             <p>Wifi: {props.cafe.has_wifi === true? "✅" : "❌"}</p>
             <p>Open Late: {props.cafe.open_late === true? "✅" : "❌"}</p>
+            <Reviews/>
+            <ReviewForm/>
             <button onClick={()=> props.addToFavorites(props.cafe)}>Add to Favorites</button>
         </div>
         </Wrapper>
@@ -47,5 +50,7 @@ const mapStateToProps = (state) => {
         favorite: state.users
     }
 }
+
+const mapDispatchToProps = { addToFavorites: actions.addToFavorites }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cafe);

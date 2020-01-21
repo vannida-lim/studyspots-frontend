@@ -98,6 +98,11 @@ const selectCafe = cafe => ({
     payload: cafe
 });
 
+const addReview = review => ({
+    type: 'ADD_REVIEW',
+    payload: review
+})
+
 export default {
     newUserToDB,
     deleteUserFromDB,
@@ -107,5 +112,6 @@ export default {
     fetchCafes,
     setCafes,
     selectCafe,
-    addToFavorites
+    addToFavorites,
+    addReview
 }

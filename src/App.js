@@ -24,13 +24,12 @@ class App extends Component {
       <Nav />
       <Routes />
       {/* <MainContainer /> */}
-      <Grid columns={3} >
-        <CafeList/>
-        <Cafe/>
-        <MapContainer/>
+      <Grid columns={1} >
+        {/* <CafeList/>
+        <Cafe/> */}
+        <Cell width={12}><MapContainer/></Cell>
+        <Cell width={12}><Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a></Footer></Cell>
       </Grid>
-      <Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a>
-      </Footer>
     </div>
   );
   }

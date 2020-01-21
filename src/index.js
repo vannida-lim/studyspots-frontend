@@ -9,10 +9,15 @@ import thunk from 'redux-thunk';
 
 import cafeReducer from './redux/cafeReducer';
 import userReducer from './redux/userReducer';
+import favoritesReducer from './redux/favoritesReducer';
+import reviewReducer from './redux/reviewReducer';
 
 const rootReducer = combineReducers({
     allInfoAboutCafes: cafeReducer,
-    users: userReducer
+    users: userReducer,
+    favorites: favoritesReducer,
+    reviews: reviewReducer
+
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

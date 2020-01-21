@@ -31,6 +31,6 @@ const mapStateToProps = (state) => {
       cafes: state.allInfoAboutCafes.cafes,
       cafe: state.allInfoAboutCafes.cafe
     }
-  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(CafeList);

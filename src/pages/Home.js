@@ -1,7 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { connect } from 'react-redux'
 
-const Home = () => {
+const Home = (props) => {
+  // console.log(this.props)
   const username = useSelector(state => state.username);
   const text = username ? (
     <h1>{username} is currently logged in</h1>
@@ -11,4 +13,10 @@ const Home = () => {
   return <div>{text}</div>;
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    user: state.users.user
+  }
+}
+
+export default connect(mapStateToProps)(Home);
