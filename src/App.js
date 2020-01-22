@@ -6,30 +6,50 @@ import Routes from './Routes';
 import CafeList from './components/CafeList'
 import Cafe from './components/Cafe'
 import MapContainer from './containers/MapContainer'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import actions from './redux/actions'
+import { Route, Switch } from 'react-router'
+import Auth from './pages/Auth'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+// import MapContainer from '../containers/MapContainer'
 
 const Footer = styled.section`font-family: 'Quicksand', sans-serif; font-size: 1em;  color: white; text-align: center; ;`
 
-const mapDispatchToProps = {fetchCafes: actions.fetchCafes }
+const mapDispatchToProps = {fetchCafes: actions.fetchCafes,
+  currentUser: actions.persistUser
+}
 class App extends Component {
-
+ 
   componentDidMount() {
-    return this.props.fetchCafes()
+    if (localStorage.token) {
+      return( this.props.fetchCafes(),
+      this.props.currentUser()) 
+    }
+    
   }
+
 
   render() {
     return (
-    <div>
+    <div> 
       <Nav />
-      <Routes />
+      <Switch>
+          <Route path='/login' render={() => <Auth/>}/>
+          <Route path='/signup' render={() => <Auth/>}/>
+          <Route path='/home' render={() => <Home/>}/>
+          <Route path='/profile' render={() => <Profile />}/>
+      </Switch>
+      {/* <MapContainer/> */}
+     {/* old code  */}
+      {/* <Routes /> */}
       {/* <MainContainer /> */}
-      <Grid columns={1} >
+      {/* <Grid columns={1} >
         {/* <CafeList/>
         <Cafe/> */}
-        <Cell width={12}><MapContainer/></Cell>
-        <Cell width={12}><Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a></Footer></Cell>
-      </Grid>
+        {/* <Cell width={12}><MapContainer/></Cell>
+        <Cell width={12}><Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a></Footer></Cell> */}
+      {/* </Grid> */} 
     </div>
   );
   }

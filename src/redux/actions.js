@@ -1,16 +1,16 @@
 const BASE_URL = 'http://localhost:3000';
 const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/persist';
-const LOGIN_URL = BASE_URL + '/login';
+const LOGIN_URL = BASE_URL + '/auth';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 
 const setUserAction = user => ({
-    type: 'SET_USER',
+    type: 'LOGIN_USER',
     payload: user
   });
 
 const clearUserAction = () => ({
-    type: 'CLEAR_USER'
+    type: 'LOGOUT_USER'
 });
   
 const newUserToDB = userObj => dispatch => {
@@ -24,6 +24,7 @@ const newUserToDB = userObj => dispatch => {
     fetch(USERS_URL, config)
       .then(r => r.json())
       .then(data => {
+        // debugger
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);
       });
@@ -50,6 +51,7 @@ const loginUserToDB = userCredentials => dispatch => {
     fetch(LOGIN_URL, config)
       .then(r => r.json())
       .then(data => {
+        // debugger
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);
       });
