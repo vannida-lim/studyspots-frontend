@@ -6,23 +6,20 @@ import userActions from '../redux/actions';
 
 const NavHeader = styled.div`
     max-width: 1010px;
-    padding: 2px 2px;
+    padding: 20px 2px;
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 0 auto;
     font-family: 'Quicksand', sans-serif; font-size: 1.5em;  
     color: white;
 `;
 
 const Title = styled.h1` 
-    width: 50%;
-    text-align: left;
+    font-size: 1.5em
 `;
 
 const NavLinks = styled.div`
-    width: 50%;
-    text-align: right;
+    font-size: 05.em
 `;
 
 
@@ -33,15 +30,19 @@ const Nav = () => {
   };
   return (
     <NavHeader>
-      <Title><span role="img" aria-label="push pin">📍</span>StudySpots</Title>
+    <div>
+      <Title>
+        <span role="img" aria-label="push pin">📍</span>StudySpots
+        </Title>
       <NavLinks>
-        <Link to="/">Home </Link><br/>
+        <Link to="/home">Home </Link>
         <Link to="/login"> Login/Signup </Link>
         <Link to="/profile"> Profile </Link>
         <Link to="/" onClick={handleLogout}>
             Logout 
         </Link>
       </NavLinks>
+      </div>
     </NavHeader>
   );
 };

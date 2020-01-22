@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux"
 import { useHistory } from 'react-router-dom'
 import userActions from "../redux/actions"
 
-const Auth = (props) => {
+const Auth = () => {
   const dispatch = useDispatch()
   const [login, setLogin] = useState(true);
   const [userData, setUserData] = useState({
@@ -25,17 +25,11 @@ const Auth = (props) => {
     }else{
       dispatch(userActions.newUserToDB(userData))
     }
-    
-    
-    // setUserData({
-    //   username: '',
-    //   password: ''
-    // })
     history.push("/home")
   };
   
   const { username, password } = userData;
- console.log(username,password)
+ 
   return (
     <div >
       <h1>{login ? 'Log in' : 'Sign Up'}</h1>

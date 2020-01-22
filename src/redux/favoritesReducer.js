@@ -1,17 +1,21 @@
-// const initialState = {
-//     favorites: {}
-// }
+const initialState = {
+    favorites: []
+}
 
-const favoritesReducer = (state = {}, { type, payload }) => {
+const favoritesReducer = (state = initialState, { type, payload }) => {
+    console.log({type})
     switch(type) {
-        case 'ADD_TO_FAVORITES':
-            return {...state.favorites, payload}
-        // case 'GET_FAVORITES':
-        //     return { favorites }
+        case 'ADD_FAVORITE':
+            return {...state, 
+                favorites: [...state.favorites, payload]
+            }
         case 'UPDATE_FAVORITE':
             return {...state.favorites, payload}
         case 'DELETE_FAVORITE':
-            return {...state.favorites, }
+            let filteredArray = state.favorites.filter(favorite => favorite !== payload)
+            return {...state, favorites: filteredArray}
+        case 'SHOW_FAVORITES':
+            return {...state, favorites: payload}
         default:
             return state;
     }

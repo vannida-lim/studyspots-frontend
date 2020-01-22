@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Grid, Cell } from 'styled-css-grid';
+// import { Grid, Cell } from 'styled-css-grid';
 import Nav from './components/Nav';
-import Routes from './Routes';
-import CafeList from './components/CafeList'
-import Cafe from './components/Cafe'
-import MapContainer from './containers/MapContainer'
+// import Routes from './Routes';
+// import CafeList from './components/CafeList'
+// import Cafe from './components/Cafe'
+// import MapContainer from './containers/MapContainer'
 import { connect, useDispatch } from 'react-redux'
 import actions from './redux/actions'
 import { Route, Switch } from 'react-router'
@@ -14,7 +14,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 // import MapContainer from '../containers/MapContainer'
 
-const Footer = styled.section`font-family: 'Quicksand', sans-serif; font-size: 1em;  color: white; text-align: center; ;`
+const Footer = styled.section`font-family: 'Quicksand', sans-serif; font-size: 1em;  color: white; text-align: center;`
 
 const mapDispatchToProps = {fetchCafes: actions.fetchCafes,
   currentUser: actions.persistUser
@@ -29,8 +29,7 @@ class App extends Component {
     
   }
 
-
-  render() {
+    render() {
     return (
     <div> 
       <Nav />
@@ -40,6 +39,7 @@ class App extends Component {
           <Route path='/home' render={() => <Home/>}/>
           <Route path='/profile' render={() => <Profile />}/>
       </Switch>
+      <Footer>Made with <span role="img" aria-label="sparkling heart">💖</span> by <a href="https://github.com/vannida-lim">Vannida Lim</a></Footer>
       {/* <MapContainer/> */}
      {/* old code  */}
       {/* <Routes /> */}

@@ -1,16 +1,12 @@
-import React, {useEffect} from 'react';
-import { useSelector,useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { connect } from 'react-redux'
 import MapContainer from '../containers/MapContainer'
-import userActions from "../redux/actions"
+// import userActions from "../redux/actions"
 
 const Home = (props) => {
-  // console.log(this.props)
-  // const username = useSelector(props => props.user);
-  const dispatch = useDispatch();
   const username = useSelector(state => state.users.currentUser.username)
   
-
   const isLoggedIn = !!localStorage.token
   const text = isLoggedIn ? (
     <div>

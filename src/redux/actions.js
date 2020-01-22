@@ -68,6 +68,7 @@ const persistUser = () => dispatch => {
       .then(r => r.json())
       .then(userInstance => {
         dispatch(setUserAction(userInstance));
+        dispatch({type: 'SHOW_FAVORITES', payload: userInstance.favorites});
       });
 };
   
@@ -75,11 +76,6 @@ const logoutUser = () => dispatch => {
     dispatch(clearUserAction());
     localStorage.clear();
 };
-
-const addToFavorites = cafe => ({
-    type: "ADD_TO_FAVORITES",
-    payload: cafe
-})
 
 const setCafes = cafes => ({
     type: "SET_CAFES",
@@ -100,10 +96,37 @@ const selectCafe = cafe => ({
     payload: cafe
 });
 
-const addReview = review => ({
-    type: 'ADD_REVIEW',
-    payload: review
-})
+
+const addFavorite = (currentUser, cafe) => dispatch => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      user_id: currentUser.id,
+      location_id: cafe.id
+    })
+  }
+  fetch(("http://localhost:3000/users/" + currentUser.id + "/favorites"), config)
+  .then( r => r.json())
+  .then(data => {
+      dispatch( {type: "ADD_FAVORITE", payload: data} )
+  })
+}
+
+// const deleteFavorite = cafe => ({
+//   type: 'DELETE_FAVORITE',
+//   payload: cafe
+// })
+
+const deleteFromDB = (currentUser, cafe) => dispatch => {
+  const config = {
+    method: 'DELETE',
+  }
+  fetch(("http://localhost:3000/users/" + currentUser.id), config)
+  .then(r => dispatch( {type: "DELETE_FAVORITE", payload: cafe} ))
+}
 
 export default {
     newUserToDB,
@@ -114,6 +137,7 @@ export default {
     fetchCafes,
     setCafes,
     selectCafe,
-    addToFavorites,
-    addReview
+    addFavorite,
+    // deleteFavorite,
+    deleteFromDB
 }
