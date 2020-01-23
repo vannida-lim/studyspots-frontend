@@ -14,7 +14,17 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 // import MapContainer from '../containers/MapContainer'
 
-const Footer = styled.section`font-family: 'Quicksand', sans-serif; font-size: 1em;  color: white; text-align: center;`
+const Footer = styled.div`
+  font-family: 'Quicksand', sans-serif; 
+  font-size: 1em;  
+  color: white; 
+  text-align: center;
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  padding: 10px;
+  width: 100%
+`
 
 const mapDispatchToProps = {fetchCafes: actions.fetchCafes,
   currentUser: actions.persistUser

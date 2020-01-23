@@ -24,7 +24,6 @@ const newUserToDB = userObj => dispatch => {
     fetch(USERS_URL, config)
       .then(r => r.json())
       .then(data => {
-        // debugger
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);
       });
@@ -51,7 +50,6 @@ const loginUserToDB = userCredentials => dispatch => {
     fetch(LOGIN_URL, config)
       .then(r => r.json())
       .then(data => {
-        // debugger
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);
       });
@@ -120,11 +118,11 @@ const addFavorite = (currentUser, cafe) => dispatch => {
 //   payload: cafe
 // })
 
-const deleteFromDB = (currentUser, cafe) => dispatch => {
+const deleteFromDB = (cafe) => dispatch => {
   const config = {
     method: 'DELETE',
   }
-  fetch(("http://localhost:3000/users/" + currentUser.id), config)
+  fetch((`http://localhost:3000/favorites/${cafe.id}`), config)
   .then(r => dispatch( {type: "DELETE_FAVORITE", payload: cafe} ))
 }
 

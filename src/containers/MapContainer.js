@@ -9,17 +9,17 @@ import actions from '../redux/actions';
 
 // const GOOGLE_KEY = process.env.GOOGLE_KEY
 const Image = styled.img`
-    width: 10em;
-    height: 10em;
-    
+  width: 10em;
+  height: 10em;
 `;
 
 const style = {
-    width: '600px',
-    height: '600px'
+  width: '1200px',
+  height: '400px',
+  padding: '20px'
 }
 
-// const icon = 'https://drive.google.com/file/d/1S-_ln104M7BxAluD62knykteplejtdmr/view?usp=sharing'
+const icon = 'https://drive.google.com/file/d/1S-_ln104M7BxAluD62knykteplejtdmr/view?usp=sharing'
 
 export class MapContainer extends Component {
   state = {
@@ -55,9 +55,10 @@ export class MapContainer extends Component {
   }
 
   render() {
-    console.log(this.state.selectedPlace)
+    // console.log(this.state.selectedPlace)
     return (
       <Map 
+      fillColor='#FF0000'
         google={this.props.google}
         style={style} 
         zoom={14}
@@ -67,6 +68,7 @@ export class MapContainer extends Component {
         {this.props.cafes.map(cafe => 
           <Marker
             key={cafe.id}
+            // icon={{url: "https://imgur.com/VTjIjoZ"}}
             id={cafe.id}
             name={cafe.name}
             url={cafe.url}
