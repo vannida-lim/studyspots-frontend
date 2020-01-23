@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 // import actions from '../redux/actions'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import actions from '../redux/actions';
+import meow_coffee from '../meow_coffee.png'
 
 // const GOOGLE_KEY = process.env.GOOGLE_KEY
 const Image = styled.img`
@@ -63,15 +64,16 @@ export class MapContainer extends Component {
         style={style} 
         zoom={14}
         initialCenter={{
-            lat: 40.783058,
-            lng: -73.971252}}>
+            lat: 40.753597,
+            lng: -73.983231}}>
         {this.props.cafes.map(cafe => 
           <Marker
             key={cafe.id}
-            // icon={{url: "https://imgur.com/VTjIjoZ"}}
+            icon={meow_coffee}
             id={cafe.id}
             name={cafe.name}
             url={cafe.url}
+            price={cafe.price}
             rating={cafe.rating}
             image={cafe.image_url}
             address={cafe.address}
