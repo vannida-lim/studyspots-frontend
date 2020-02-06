@@ -21,6 +21,7 @@ const Title = styled.div`
 const NavLinks = styled.div`
   font-size: 05.em;
   display: flex;
+  
 `;
 
 const LinkDiv = styled.div`
@@ -43,6 +44,7 @@ const Nav = () => {
       </Title>
       <NavLinks>
         <LinkDiv><Link to="/home">Home </Link></LinkDiv>
+        <LinkDiv><Link to='/locations'>Cafes</Link></LinkDiv>
         <LinkDiv><Link to="/profile"> Profile </Link></LinkDiv>
         <LinkDiv><Link to="/login"> Login/Signup </Link></LinkDiv>
         <LinkDiv><Link to="/" onClick={handleLogout}>Logout </Link></LinkDiv>

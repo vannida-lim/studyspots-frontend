@@ -1,68 +1,133 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Study Spots** 📍 📝
+===================
 
-## Available Scripts
+A full stack React.js, Redux and Ruby on Rails web app aimed to provide
+a convenient way of searching for places to study.
 
-In the project directory, you can run:
+Built with 💖 and ✨ by [[Vannida
+Lim]{.underline}](https://github.com/vannida-lim)
 
-### `yarn start`
+**Goals**
+---------
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Users will be able to view a list of cafe locations.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Users will be able to filter locations by "has wifi" and/or "open late".
 
-### `yarn test`
+Users will be able to signup and login to view and add locations to
+their favorites.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users will be able to update or delete their location favorites.
 
-### `yarn build`
+Users will be able to drag through the map to view location markers;
+they will be able to click the marker and view the location's
+information.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Users will be able to search for locations by name.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Features**
+------------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+StudySpots is an app that aims to provide users a convenient way to
+search for studying environments. Users can search for locations
+according to how late a place is open, and if it has wifi. Users will be
+able to save locations to their favorites and easily access them when
+signing in.
 
-### `yarn eject`
+**Tech Stack**
+--------------
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This web app makes use of the following:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-   [[Ruby \[2.6.1\]]{.underline}](https://www.ruby-lang.org/en/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   [[Ruby on Rails \[\~\>
+    > 5.2.3\]]{.underline}](https://rubyonrails.org/) - MVC web
+    > framework used as an API
 
-## Learn More
+-   [[PostgreSQL \[\>= 0.18, \<
+    > 2.0\]]{.underline}](https://www.postgresql.org/) - Database
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   [[bcrypt \[\~\>
+    > 3.1.7\]]{.underline}](https://github.com/codahale/bcrypt-ruby) -
+    > Rails gem for encryption and securing user passwords
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   [[Figaro]{.underline}](https://github.com/laserlemon/figaro) - Rails
+    > gem for securing API Keys
 
-### Code Splitting
+-   [[Active Model
+    > Serializers]{.underline}](https://github.com/rails-api/active_model_serializers) -
+    > Serializing API routes to JSON
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+-   [[Yelp-Fusion]{.underline}](https://github.com/erikgrueter1/yelp-fusion)-
+    > Rails gem for utilizing the Yelp Fusion API
 
-### Analyzing the Bundle Size
+-   [[Heroku]{.underline}](https://www.heroku.com/) - App deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Front End
 
-### Making a Progressive Web App
+-   [[React.js]{.underline}](https://reactjs.org/) - Javascript library
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+-   [[react-router]{.underline}](https://github.com/ReactTraining/react-router#readme) -
+    > NPM used for declarative routing
 
-### Advanced Configuration
+-   [[react-redux]{.underline}](https://react-redux.js.org/) -
+    > React-Redux library
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+-   [[styled-components]{.underline}](https://www.styled-components.com/) -
+    > CSS library
 
-### Deployment
+-   [[google-maps-react]{.underline}](https://github.com/fullstackreact/google-maps-react) -
+    > NPM for utilizing the Google Maps API
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+**Prerequisites**
+-----------------
 
-### `yarn build` fails to minify
+Before you begin, ensure you have installed the latest version of:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-   [Ruby](https://www.ruby-lang.org/en/)
+
+-   [Rails](https://rubyonrails.org/)
+
+-   [PostgreSQL](https://www.postgresql.org/)
+
+-   [Node.js and npm](https://nodejs.org/en/)
+
+This web app uses the following API keys from:
+
+-   [[Google Maps Platform
+    > API]{.underline}](https://developers.google.com/maps/documentation)
+
+-   [[Yelp Fusion API]{.underline}](https://www.yelp.com/fusion)
+
+**Installing**
+--------------
+
+*For information on Backend Installation please click here: [[Study
+Spots
+Backend]{.underline}](https://github.com/vannida-lim/studyspots-backend)*
+
+Frontend Installation:
+
+-   Clone this repo to your local machine git clone
+    > git\@github.com:vannida-lim/studyspots-frontend2.git
+
+-   cd to frontend directory
+
+-   Ensure your Backend API is running at http://localhost:3000/
+
+-   run npm install to install all dependencies
+
+-   run npm start to start server
+
+-   When prompted, ensure Frontend is running at http://localhost:3001
+
+ 
+
+ **Models and Component Tree**
+-----------------------------------------------
+![](media/image2.png){width="6.5in" height="3.111111111111111in"}
+
+![](media/image5.png){width="6.5in" height="1.7361111111111112in"}
