@@ -43,38 +43,28 @@ Backend
 
 -   [Ruby 2.6.1](https://www.ruby-lang.org/en/)
 
--   [Ruby on Rails ~> 5.2.3](https://rubyonrails.org/) - MVC web
-    > framework used as an API
+-   [Ruby on Rails ~> 5.2.3](https://rubyonrails.org/) - MVC web framework used as an API
 
--   [PostgreSQL \[\>= 0.18, \<
-    > 2.0\](https://www.postgresql.org/) - Database
+-   [PostgreSQL >= 0.18, < 2.0](https://www.postgresql.org/) - Database
 
--   [bcrypt ~>3.1.7](https://github.com/codahale/bcrypt-ruby) -
-    > Rails gem for encryption and securing user passwords
+-   [bcrypt ~>3.1.7](https://github.com/codahale/bcrypt-ruby) - Rails gem for encryption and securing user passwords
 
--   [Active Model Serializers](https://github.com/rails-api/active_model_serializers) -
-    > Serializing API routes to JSON
+-   [Active Model Serializers](https://github.com/rails-api/active_model_serializers) - Serializing API routes to JSON
 
--   [Yelp-Fusion](https://github.com/erikgrueter1/yelp-fusion)-
-    > Rails gem for utilizing the Yelp Fusion API
+-   [Yelp-Fusion](https://github.com/erikgrueter1/yelp-fusion) - Rails gem for utilizing the Yelp Fusion API
 
--   [[Heroku]{.underline}](https://www.heroku.com/) - App deployment
 
 Front End
 
--   [[React.js]{.underline}](https://reactjs.org/) - Javascript library
+-   [React.js](https://reactjs.org/) - Javascript library
 
--   [[react-router]{.underline}](https://github.com/ReactTraining/react-router#readme) -
-    > NPM used for declarative routing
+-   [react-router](https://github.com/ReactTraining/react-router#readme) - NPM used for declarative routing
 
--   [[react-redux]{.underline}](https://react-redux.js.org/) -
-    > React-Redux library
+-   [react-redux](https://react-redux.js.org/) - React-Redux library
 
--   [[styled-components]{.underline}](https://www.styled-components.com/) -
-    > CSS library
+-   [styled-components](https://www.styled-components.com/) - CSS library
 
--   [[google-maps-react]{.underline}](https://github.com/fullstackreact/google-maps-react) -
-    > NPM for utilizing the Google Maps API
+-   [google-maps-react](https://github.com/fullstackreact/google-maps-react) - NPM for utilizing the Google Maps API
 
 **Prerequisites**
 -----------------
@@ -91,37 +81,30 @@ Before you begin, ensure you have installed the latest version of:
 
 This web app uses the following API keys from:
 
--   [[Google Maps Platform
-    > API]{.underline}](https://developers.google.com/maps/documentation)
+-   [Google Maps Platform API](https://developers.google.com/maps/documentation)
 
--   [[Yelp Fusion API]{.underline}](https://www.yelp.com/fusion)
+-   [Yelp Fusion API](https://www.yelp.com/fusion)
 
 **Installing**
 --------------
 
-*For information on Backend Installation please click here: [[Study
-Spots
-Backend]{.underline}](https://github.com/vannida-lim/studyspots-backend)*
+*For information on Backend Installation please click here: [Study Spots Backend](https://github.com/vannida-lim/studyspots-backend)*
 
 Frontend Installation:
 
--   Clone this repo to your local machine git clone
-    > git\@github.com:vannida-lim/studyspots-frontend2.git
+-   Clone this repo to your local machine `git clone git @github.com:vannida-lim/studyspots-frontend2.git`
 
 -   cd to frontend directory
 
--   Ensure your Backend API is running at http://localhost:3000/
-
+-   Ensure your Backend API is running at `http://localhost:3000/`
 -   run npm install to install all dependencies
 
 -   run npm start to start server
 
--   When prompted, ensure Frontend is running at http://localhost:3001
-
- 
+-   When prompted, ensure Frontend is running at `http://localhost:3001`
 
  **Models and Component Tree**
 -----------------------------------------------
-![](media/image2.png){width="6.5in" height="3.111111111111111in"}
+![Image](https://imgur.com/VitdDxR)
 
-![](media/image5.png){width="6.5in" height="1.7361111111111112in"}
+![Image](https://imgur.com/8AUhmcB)
