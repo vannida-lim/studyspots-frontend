@@ -1,12 +1,12 @@
-<p align= 'center'> **Study Spots** 📍 📝
-===================
-
+<p align= 'center'> <h1> Study Spots 📍📝 </h1></p>
+<p align= 'center'>
 A full stack React.js, Redux and Ruby on Rails web app aimed to provide
 a convenient way of searching for places to study.
 
 Built with 💖 and ✨ by [Vannida
 Lim](https://github.com/vannida-lim)
 </p>
+
 
 **Goals**
 ---------
