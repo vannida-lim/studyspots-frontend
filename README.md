@@ -1,5 +1,5 @@
-<p align= 'center'> <h1> Study Spots 📍📝 </h1></p>
-<p align= 'center'>
+<p style= 'text-align: center'> <h1> Study Spots 📍📝 </h1></p>
+<p style= 'text-align: center'>
 A full stack React.js, Redux and Ruby on Rails web app aimed to provide
 a convenient way of searching for places to study.
 
