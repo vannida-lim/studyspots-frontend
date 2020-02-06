@@ -4,8 +4,8 @@
 A full stack React.js, Redux and Ruby on Rails web app aimed to provide
 a convenient way of searching for places to study.
 
-Built with 💖 and ✨ by [[Vannida
-Lim]{.underline}](https://github.com/vannida-lim)
+Built with 💖 and ✨ by [Vannida
+Lim](https://github.com/vannida-lim)
 
 **Goals**
 ---------
@@ -41,27 +41,21 @@ This web app makes use of the following:
 
 Backend
 
--   [[Ruby \[2.6.1\]]{.underline}](https://www.ruby-lang.org/en/)
+-   [Ruby 2.6.1](https://www.ruby-lang.org/en/)
 
--   [[Ruby on Rails \[\~\>
-    > 5.2.3\]]{.underline}](https://rubyonrails.org/) - MVC web
+-   [Ruby on Rails ~> 5.2.3](https://rubyonrails.org/) - MVC web
     > framework used as an API
 
--   [[PostgreSQL \[\>= 0.18, \<
-    > 2.0\]]{.underline}](https://www.postgresql.org/) - Database
+-   [PostgreSQL \[\>= 0.18, \<
+    > 2.0\](https://www.postgresql.org/) - Database
 
--   [[bcrypt \[\~\>
-    > 3.1.7\]]{.underline}](https://github.com/codahale/bcrypt-ruby) -
+-   [bcrypt ~>3.1.7](https://github.com/codahale/bcrypt-ruby) -
     > Rails gem for encryption and securing user passwords
 
--   [[Figaro]{.underline}](https://github.com/laserlemon/figaro) - Rails
-    > gem for securing API Keys
-
--   [[Active Model
-    > Serializers]{.underline}](https://github.com/rails-api/active_model_serializers) -
+-   [Active Model Serializers](https://github.com/rails-api/active_model_serializers) -
     > Serializing API routes to JSON
 
--   [[Yelp-Fusion]{.underline}](https://github.com/erikgrueter1/yelp-fusion)-
+-   [Yelp-Fusion](https://github.com/erikgrueter1/yelp-fusion)-
     > Rails gem for utilizing the Yelp Fusion API
 
 -   [[Heroku]{.underline}](https://www.heroku.com/) - App deployment
