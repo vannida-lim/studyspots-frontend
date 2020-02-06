@@ -1,4 +1,4 @@
-**Study Spots** 📍 📝
+<p align= 'center'> **Study Spots** 📍 📝
 ===================
 
 A full stack React.js, Redux and Ruby on Rails web app aimed to provide
@@ -6,6 +6,7 @@ a convenient way of searching for places to study.
 
 Built with 💖 and ✨ by [Vannida
 Lim](https://github.com/vannida-lim)
+</p>
 
 **Goals**
 ---------
@@ -94,12 +95,12 @@ Frontend Installation:
 
 -   Clone this repo to your local machine `git clone git @github.com:vannida-lim/studyspots-frontend2.git`
 
--   cd to frontend directory
+-   cd to `studyspots-frontend2`
 
 -   Ensure your Backend API is running at `http://localhost:3000/`
 -   run npm install to install all dependencies
 
--   run npm start to start server
+-   run `npm start` to start server
 
 -   When prompted, ensure Frontend is running at `http://localhost:3001`
 
