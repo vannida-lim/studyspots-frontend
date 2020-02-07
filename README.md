@@ -76,8 +76,4 @@ Frontend Installation:
 
  **Component Tree**
 -----------------------------------------------
-<<<<<<< HEAD
 ![Image](https://i.imgur.com/8AUhmcB.png)
-=======
-![Image](https://i.imgur.com/8AUhmcB.png)
->>>>>>> vannidalim
