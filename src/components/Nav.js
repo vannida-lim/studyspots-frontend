@@ -5,42 +5,49 @@ import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions';
 
 const NavHeader = styled.div`
-    max-width: 1010px;
-    padding: 2px 2px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    font-family: 'Quicksand', sans-serif; font-size: 1.5em;  
-    color: white;
+  max-width: 1010px;
+  padding: 20px 2px;
+  width: 100%;
+  display: flex;
+  font-family: 'Quicksand', sans-serif; 
+  font-size: 1.5em;  
+  color: white; 
 `;
 
-const Title = styled.h1` 
-    width: 50%;
-    text-align: left;
+const Title = styled.div` 
+  font-size: 1.5em
 `;
 
 const NavLinks = styled.div`
-    width: 50%;
-    text-align: right;
+  font-size: 05.em;
+  display: flex;
+  
+`;
+
+const LinkDiv = styled.div`
+  padding: 3%;
+  justify-content: flex-end
 `;
 
 
 const Nav = () => {
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     dispatch(userActions.logoutUser());
   };
+
   return (
     <NavHeader>
-      <Title><span role="img" aria-label="push pin">📍</span>StudySpots</Title>
+      <Title>
+        <span role="img" aria-label="push pin">📍</span>StudySpots
+      </Title>
       <NavLinks>
-        <Link to="/">Home </Link><br/>
-        <Link to="/login"> Login/Signup </Link>
-        <Link to="/profile"> Profile </Link>
-        <Link to="/" onClick={handleLogout}>
-            Logout 
-        </Link>
+        <LinkDiv><Link to="/home">Home </Link></LinkDiv>
+        <LinkDiv><Link to='/locations'>Cafes</Link></LinkDiv>
+        <LinkDiv><Link to="/profile"> Profile </Link></LinkDiv>
+        <LinkDiv><Link to="/login"> Login/Signup </Link></LinkDiv>
+        <LinkDiv><Link to="/" onClick={handleLogout}>Logout </Link></LinkDiv>
       </NavLinks>
     </NavHeader>
   );

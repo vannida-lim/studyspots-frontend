@@ -24,7 +24,6 @@ const newUserToDB = userObj => dispatch => {
     fetch(USERS_URL, config)
       .then(r => r.json())
       .then(data => {
-        // debugger
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);
       });
@@ -51,7 +50,6 @@ const loginUserToDB = userCredentials => dispatch => {
     fetch(LOGIN_URL, config)
       .then(r => r.json())
       .then(data => {
-        // debugger
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token);
       });
@@ -68,6 +66,7 @@ const persistUser = () => dispatch => {
       .then(r => r.json())
       .then(userInstance => {
         dispatch(setUserAction(userInstance));
+        dispatch({type: 'SHOW_FAVORITES', payload: userInstance.favorites});
       });
 };
   
@@ -75,11 +74,6 @@ const logoutUser = () => dispatch => {
     dispatch(clearUserAction());
     localStorage.clear();
 };
-
-const addToFavorites = cafe => ({
-    type: "ADD_TO_FAVORITES",
-    payload: cafe
-})
 
 const setCafes = cafes => ({
     type: "SET_CAFES",
@@ -100,10 +94,37 @@ const selectCafe = cafe => ({
     payload: cafe
 });
 
-const addReview = review => ({
-    type: 'ADD_REVIEW',
-    payload: review
-})
+
+const addFavorite = (currentUser, cafe) => dispatch => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      user_id: currentUser.id,
+      location_id: cafe.id
+    })
+  }
+  fetch(("http://localhost:3000/users/" + currentUser.id + "/favorites"), config)
+  .then( r => r.json())
+  .then(data => {
+      dispatch( {type: "ADD_FAVORITE", payload: data} )
+  })
+}
+
+// const deleteFavorite = cafe => ({
+//   type: 'DELETE_FAVORITE',
+//   payload: cafe
+// })
+
+const deleteFromDB = (cafe) => dispatch => {
+  const config = {
+    method: 'DELETE',
+  }
+  fetch((`http://localhost:3000/favorites/${cafe.id}`), config)
+  .then(r => dispatch( {type: "DELETE_FAVORITE", payload: cafe} ))
+}
 
 export default {
     newUserToDB,
@@ -114,6 +135,7 @@ export default {
     fetchCafes,
     setCafes,
     selectCafe,
-    addToFavorites,
-    addReview
+    addFavorite,
+    // deleteFavorite,
+    deleteFromDB
 }
