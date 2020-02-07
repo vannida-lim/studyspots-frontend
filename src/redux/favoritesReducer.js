@@ -3,7 +3,6 @@ const initialState = {
 }
 
 const favoritesReducer = (state = initialState, { type, payload }) => {
-    console.log({type})
     switch(type) {
         case 'ADD_FAVORITE':
             return {...state, 
@@ -19,7 +18,6 @@ const favoritesReducer = (state = initialState, { type, payload }) => {
         default:
             return state;
     }
-
 }
 
 export default favoritesReducer;

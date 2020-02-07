@@ -9,7 +9,6 @@ body {
 
 }
 
-
 a:link {
   color: white;
   text-decoration: none
@@ -20,18 +19,8 @@ a:visited {
   text-decoration: none
 }
 
-a:hover {
-  color: #7067CE
+#info-link {
+  color: black;
 }
 
-/* h1 {
-  animation:blinkingText 2s infinite;
-}
 
-@keyframes blinkingText{
-  0%{     color: white;    }
-  49%{    color: white }
-  60%{    color: transparent; }
-  99%{    color:transparent;  }
-  100%{   color: white;    }
-} */

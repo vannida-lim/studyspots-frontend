@@ -1,13 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import actions from '../redux/actions'
-import { uuid } from 'uuidv4'
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-    text-align: center;
-    font-size: 20px
-`
+import React from 'react';
+import { connect } from 'react-redux';
+import actions from '../redux/actions';
+import { uuid } from 'uuidv4';
+import styled from 'styled-components';
 
 const Title = styled.h2`
     font-size: 1.5em;
@@ -35,13 +30,12 @@ const Button = styled.button`
 
 
 const Profile = (props) => {
-  
     return (
         <div>
-            <Title><h2>✨ {props.currentUser.username}'s ✨ Favorites Spots</h2></Title>
+            <Title><h2><span role="img" aria-label="sparkle-emoji">✨</span> {props.currentUser.username}'s <span role="img" aria-label="sparkle-emoji">✨</span> Favorites Spots</h2></Title>
             {props.favorites.map(cafe => 
             <Location key={uuid()}>
-                ☕️{cafe.location.name}📍{cafe.location.location}
+                <span role="img" aria-label="coffee-emoji">☕️</span> {cafe.location.name} <span role="img" aria-label="pin-emoji">📍</span>{cafe.location.location}
                 <Button onClick={() => props.deleteFavorite(cafe, props.currentUser)}>Delete</Button>
             </Location>
             )}

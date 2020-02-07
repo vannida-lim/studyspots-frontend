@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import actions from '../redux/actions'
-// import { selectCafe } from '../redux/actions'
-import styled from 'styled-components'
-// import SearchBar from '../components/SearchBar'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import actions from '../redux/actions';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
     margin: 0 auto;
@@ -17,58 +15,56 @@ const Wrapper = styled.div`
 
 const mapDispatchToProps = { selectCafe: actions.selectCafe }
 class CafeList extends Component {
-    filteredWifi= this.props.cafes.filter(cafe => cafe.has_wifi === true)
-
-    filteredLate= this.props.cafes.filter(cafe => cafe.open_late === true)
-
-    state = {current: ""}
+    state = {
+        filtered: ""
+    }
 
     currentDisplay = () => {
-        if(this.state.current === "has_wifi"){
-            return this.filteredWifi
-        } else if(this.state.current === "open_late" ) {
-            return this.filteredLate
+        let filteredWifi= this.props.cafes.filter(cafe => cafe.has_wifi === true)
+        let filteredLate= this.props.cafes.filter(cafe => cafe.open_late === true)
+      
+        if (this.state.filtered === "has_wifi"){
+            return filteredWifi.map(cafe => <div key={cafe.id}>
+                    <span role='img' aria-label='pin-emoji'>📍</span><a href={cafe.url}>{cafe.name}</a></div>)
+        } else if (this.state.filtered === "open_late" ) {
+            return filteredLate.map(cafe => <div key={cafe.id}>
+                <span role='img' aria-label='pin-emoji'>📍</span><a href={cafe.url}>{cafe.name}</a></div>)
         } else {
-            return this.props.cafes
+            return this.props.cafes.map(cafe => <div key={cafe.id}>
+                <span role='img' aria-label='pin-emoji'>📍</span><a href={cafe.url}>{cafe.name}</a></div>)
         }
     }
 
-    handleChange = (event) => {
-        this.setState({current: event.target.value})
+    setFiltered = (e) => {
+        this.setState({filtered: e.target.value})
     }
 
-    renderList() {
-
-
-
-        if (this.props.cafes) {
-            return this.props.cafes.map(cafe => {
-                return (<div key={cafe.id}>
-                    {/* {cafe.name}  */}
-                    {/* <button onClick={() => this.props.selectCafe(cafe)} >View More</button> */}
-                    📍<a href={cafe.url}>{cafe.name}</a> 
-                </div>)
-        })}
-        // this.currentDisplay.map(cafe=> <div key={cafe.id}> 📍<a href={cafe.url}>{cafe.name}</a></div> )
-    }
+    // renderList() {
+    //     if (this.props.cafes) {
+    //         return this.props.cafes.map(cafe => {
+    //             return (<div key={cafe.id}>
+    //                 <span role='img' aria-label='pin-emoji'>📍</span><a href={cafe.url}>{cafe.name}</a> 
+    //             </div>)
+    //     })}
+    // }
 
     render() {
-    return (
-        <Wrapper>
-            <label>
-                <strong>Filter: </strong>
-                <select 
-                onChange={this.handleChange} 
-                value={null}>
-                <option value="has_wifi">Wifi</option>
-                <option value="open_late">Open Late</option>
-            </select>
-        </label>
-            <h1>Manhattan Cafes</h1>
-            <p>Click to See More Info</p>
-            <div className="list">{this.renderList()}</div>
-     </Wrapper>
-    )}
+        return (
+            <Wrapper>
+                <label>
+                    <strong>Filter: </strong>
+                    <select 
+                    onChange={(e) => this.setFiltered(e)} 
+                    value={this.state.filtered}>
+                    <option value="has_wifi">Wifi</option>
+                    <option value="open_late">Open Late</option>
+                    </select>
+                </label>
+                <h1>Manhattan Cafes</h1>
+                <p>Click to See More Info</p>
+                <div>{this.currentDisplay()}</div>
+        </Wrapper>
+        )}
 }
 
 const mapStateToProps = (state) => {

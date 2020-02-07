@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-// import logger from "redux-logger"
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import './index.css';
+import App from './App';
 
 import cafeReducer from './redux/cafeReducer';
 import userReducer from './redux/userReducer';
@@ -28,7 +27,7 @@ let store = createStore(rootReducer, composeEnhancers(applyMiddleware(/*logger,*
 ReactDOM.render(
 <Provider store={store}>
      <Router>
-        <App />
+        <App/>
     </Router>
 </Provider>, 
 document.getElementById('root'));

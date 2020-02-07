@@ -1,12 +1,10 @@
-import styled from 'styled-components'
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import styled from 'styled-components';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
-// import Icon from './barista-icons_cappuccino.svg'
-// import actions from '../redux/actions'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import actions from '../redux/actions';
-import meow_coffee from '../meow_coffee.png'
+import meow_coffee from '../meow_coffee.png';
 
 // const GOOGLE_KEY = process.env.GOOGLE_KEY
 const Image = styled.img`
@@ -19,8 +17,6 @@ const style = {
   height: '400px',
   padding: '20px'
 }
-
-const icon = 'https://drive.google.com/file/d/1S-_ln104M7BxAluD62knykteplejtdmr/view?usp=sharing'
 
 export class MapContainer extends Component {
   state = {
@@ -56,7 +52,6 @@ export class MapContainer extends Component {
   }
 
   render() {
-    // console.log(this.state.selectedPlace)
     return (
       <Map 
       fillColor='#FF0000'
@@ -90,13 +85,13 @@ export class MapContainer extends Component {
                 <h1>{this.state.selectedPlace.name}</h1>
                 <div><Image alt={this.state.selectedPlace.name} src={this.state.selectedPlace.image}/></div>
                 <p>{this.state.selectedPlace.address}</p>
-                <a href={this.state.selectedPlace.url}>Click Here for More Info</a>
+                <a id="info-link" href={this.state.selectedPlace.url}>Click Here for More Info</a>
                 <p>Ratings: {this.state.selectedPlace.rating}/5</p>
                 <p>Price: {this.state.selectedPlace.price === null? "$" : this.state.selectedPlace.price}</p>
                 <p>Wifi: {this.state.selectedPlace.has_wifi === true? "✅" : "❌"}</p>
                 <p>Open Late: {this.state.selectedPlace.open_late === true? "✅" : "❌"}</p>
             </div>
-            <div id = "iwc"></div>
+            <div id="iwc"></div>
            </InfoWindow>
           </Map>
         );

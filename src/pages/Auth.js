@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {useDispatch} from "react-redux"
-import { useHistory } from 'react-router-dom'
-import userActions from "../redux/actions"
-import styled from 'styled-components'
+import {useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import userActions from '../redux/actions';
+import styled from 'styled-components';
 
 const Button = styled.button`
   display: inline-block;
