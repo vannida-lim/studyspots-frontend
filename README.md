@@ -1,11 +1,12 @@
-<p align='center"> Study Spots 📍📝 </p>
-<p align="center">
-A full stack React.js, Redux and Ruby on Rails web app aimed to provide
+<h1 align='center'><b>Study Spots 📍📝</b></h1>  
+<p align='center'>
+A full stack <code>React.js</code>, <code>Redux</code> and <code>Ruby on Rails</code> web app aimed to provide
 a convenient way of searching for places to study.
 </p>
+
 <p align="center">
-Built with 💖 and ✨ by [Vannida
-Lim](https://github.com/vannida-lim)
+Built with 💖 and ✨ by <a href='https://github.com/vannida-lim'>Vannida
+Lim</a>
 </p>
 
 **Features**
@@ -65,7 +66,7 @@ Frontend Installation:
 
 -   Clone this repo to your local machine `git clone git <this-repo-url>`
 
--   `cd` to `studyspots-frontend2`
+-   `cd` to `studyspots-frontend`
 
 -   Ensure your Backend API is running at `http://localhost:3000/`
 -   run npm install to install all dependencies
