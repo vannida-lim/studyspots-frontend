@@ -9,6 +9,10 @@ Built with 💖 and ✨ by <a href='https://github.com/vannida-lim'>Vannida
 Lim</a>
 </p>
 
+**Demo** 
+------------
+![demo-gif](public/study-spots-demo.gif)
+
 **Features**
 ------------
 
